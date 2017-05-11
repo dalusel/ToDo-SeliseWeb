@@ -1,0 +1,58 @@
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<div align="center">
+  <h1>Add new Task</h1>
+  <%= form_for @taskstatus, :url => url_for(:controller => 'task_status', :action => 'create') do |f| %>
+
+      <table>
+        <!-- region for error messages-->
+        <tr>
+          <td colspan="2">
+              <ul>
+                   <%-  @taskstatus.errors.full_messages.each do |msg| %>
+                   <li class ="errorMsg"><p class="my_Error"><%= msg %></p></li>
+                   <%- end %>
+              </ul>
+          </td>
+        </tr>
+
+        <!-- region for Task -->
+        <tr>
+          <td align="right" valign="top">
+               <%= f.label :task %>
+          </td>
+          <td>
+               <%= f.text_field  :task, class: "my_Task" %></br/></br>
+          </td>
+        </tr>
+
+        <!-- region for Task Time and Meridiem-->
+        <tr>
+          <td align="right" valign="top">
+              <%= f.label "Task time" %>
+          </td>
+          <td>
+              <table>
+                    <tr>
+                        <td>
+                            <%= f.text_field :tasktime, class:"my_Time"%>
+                        </td>
+                        <td>
+                             <%= f.select(:meridiem, options_for_select([["AM","AM"],["PM","PM"]]),{}, {:class=>"my_select"})%>
+                        </td>
+                    </tr>
+              </table>
+              <br/></br/>
+          </td>
+        </tr>       
+       
+        <!-- region for Submit button-->
+        <tr>
+          <td>
+          </td>
+          <td>
+               <%= f.submit "Create" %>
+          </td>
+        </tr>
+      </table>
+  <% end %> 
+</div>

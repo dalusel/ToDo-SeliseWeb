@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  reminder: MyString
+  status: false
+  tasktime: 1
+  meridiem: MyString
+
+two:
+  task: MyString
+  reminder: MyString
+  status: false
+  tasktime: 1
+  meridiem: MyString

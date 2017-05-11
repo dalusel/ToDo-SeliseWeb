@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      ToDo
+    </title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= include_gon %>
+  </head>
+
+  <body>
+  <table align="center" width="60%">
+    <tr><td>
+  <div align ="center" style="height:40px; background:blue; color:#000; font-size:150%;">My task to do for today</div>
+    </td></tr>
+  </table>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+// Place all the styles related to the TaskStatus controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.my_Time {
+  width: 50px; 
+}
+
+.my_select {
+  width: 50px;
+  height: 20px;
+}
+
+.status {
+  width: 30px;
+  height: 20px;
+}
+
+.task {
+  width: 100px;
+  height: 20px;
+}
+
+.reminder {
+  width: 200px;
+  height: 20px;
+ }
+
+
+.header{
+  width:330px;
+  height: 20px;
+}
+
+.my_Error{
+	color:red;
+}
+
+.reminderText
+{
+   display: inline;
+   color: red;
+   animation: blink 5s steps(1) infinite;
+   -webkit-animation: blink 5s steps(1) infinite;
+}
+@keyframes blink { 50% { color: transparent; } }
+@-webkit-keyframes blink { 50% { color: transparent; } }
+   
+
+
+

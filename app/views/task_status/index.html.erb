@@ -1,0 +1,58 @@
+<div align="center">
+   <table border="0" >
+      <!-- region for Pending Task heading -->
+      <tr class="header">
+         <td colspan="3">
+            <h3>Pending Task</h3>
+         </td>
+      </tr>  
+
+      <!-- region for displaying all Pending Task -->
+      <% @pendingTask.each do |item| %>
+      <tr align="left" class="header">
+         <%= form_tag :url => url_for(:controller => 'task_status', :action => 'index') do %>
+         <%= text_field_tag 'TaskID',item.id, {:id =>"#{item.id}" ,class: "my_TaskID", style:"display: none;"} %>
+         <%= submit_tag "submit" , class: "my_Submit" , style:"display: none;"%>
+         <td align="left" class="status">   
+            <%= check_box_tag "myTask_id", item.status, false, {:id => "#{item.id}", :class=>"my_Status"} -%>  
+         </td>
+         <td class="task">
+            <%= item.task %>
+         </td>
+         <td class="reminder">     
+            <p class="reminderText"> <%= item.reminder %></p>
+         </td>          
+         <%end%>
+      <%end %>
+      </tr>
+     
+      <!-- region for Completed Task heading -->
+      <tr class="header">
+         <td colspan="3" >
+             <h3> Completed Task</h3>
+         </td>
+      </tr>
+
+      <!-- region for displaying all Completed Task heading -->
+      <% @completedTask.each do |item| %>
+      <tr align="left" class="header">
+         <%= form_tag :url => url_for(:controller => 'task_status', :action => 'index') do %>
+         <%= text_field_tag 'TaskID',item.id, {:id =>"#{item.id}" ,class: "my_TaskID", style:"display: none;"} %>
+         <%= submit_tag "submit" , class: "my_Submit", style:"display: none;"%>
+         <td align="left" class="status">    
+            <%= check_box_tag "status", item.status, true, {:id => "#{item.id}", :class=>"my_Status"} -%>  
+         </td>
+         <td class ="task">
+            <%= item.task %>
+         </td>
+         <td class ="reminder"></td>      
+         <%end %>
+      </tr>
+      <%end%>
+  </table>
+  <%= link_to '|Create New Task|', :controller=>"task_status", :action=>"new" %>
+</div>
+
+
+
+

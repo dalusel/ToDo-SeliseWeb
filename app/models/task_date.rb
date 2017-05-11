@@ -1,0 +1,2 @@
+class TaskDate < ApplicationRecord
+end
